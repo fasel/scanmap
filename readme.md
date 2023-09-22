@@ -279,14 +279,15 @@ Initial set up:
 - create a non-root user (here named `friend`)
 
 ```
-sudo apt install nginx python3 python3-dev python3-pip python3-setuptools libxml2-dev libxslt-dev --no-install-recommends
-sudo pip3 install virtualenv==16.7.10
+sudo apt install nginx python3 python3-dev python3-pip python3-setuptools libxml2-dev
+sudo snap install libxslt
+sudo apt install python3.10-venv
 
 # Copy this repo to /srv/scanmap
 sudo chown -R friend:www-data /srv/scanmap
 
 # Set up python dependencies
-virtualenv -p python3.8 env
+python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 
